@@ -1,7 +1,9 @@
-# plutoProj
+# About plutoProj
 Project for CTfNP including PLUTO generation of pi mesons from a heavy-ion fireball.
 
-## Task list
+# How to use me?
+
+# Task list
 
 #### Done 
 
