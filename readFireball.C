@@ -6,13 +6,12 @@ int readFireball (TString filename, Double_t pmin, Double_t pmax, Double_t theta
 	//Double_t Tbeam, T1, T2, w, radExp, a2, a4, v1, v2, pmin, pmax, thetamin, thetamax;
 	//TString partname, filename;
 
-	// This macro is supposed to read data from the PLUTO file
-
+	// This macro is supposed to will read data from the PLUTO file
 	// Definition of a TH2D for the pt:y distribution
 
 	TH2F *pty = new TH2F ("pty", "pt:y distribution; y_{CM}; p_{t} [GeV]",  80, -4, 4, 200, 0, 2);
 
-	// First let's define the TClonesArray necessary for extraction of 
+	// Define the TClonesArray necessary for extraction of 
 	// particles from events.
 
 	TClonesArray* partArray = new TClonesArray ("PParticle", 10);
@@ -48,9 +47,10 @@ int readFireball (TString filename, Double_t pmin, Double_t pmax, Double_t theta
 			if (Part[iP]->P() < pmin || Part[iP]->P() > pmax) 
 				continue;
 			if (Part[iP]->Theta()*TMath::RadToDeg() < thetamin 
-			|| Part[iP]->Theta()*TMath::RadToDeg() > thetamax) 					continue;
+			|| Part[iP]->Theta()*TMath::RadToDeg() > thetamax) 					
+				continue;
 
-	// Filling histos
+	// Filling histo(s)
 
 			pty->Fill(rap - ycm, Part[iP]->Pt());
 
@@ -61,6 +61,6 @@ int readFireball (TString filename, Double_t pmin, Double_t pmax, Double_t theta
 	gStyle->SetOptStat(0);
 	pty->Draw("colz");
 	
-return 0;
+	return 0;
 
 }
