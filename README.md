@@ -5,7 +5,7 @@ Generating pi mesons from a fireball using the PLUTO code. Developed for Compute
 
 First download and unpack this repository. 
 
-Assure the correct inclusion of PLUTO and ROOT libraries. Then it is enough to invoke plutoProj(), for example using `root -l plutoProj.C`.
+Assure the correct inclusion of PLUTO and ROOT libraries. Then it is enough to invoke plutoProj.C, for example using `root -l plutoProj.C`.
 
 All important settings regarding the simulation and data analysis can be easily accessed and modified in the plutoProj.C macro. It includes the number of events to be generated, type of particle, fireball parameters and acceptance cuts for the analysis. The plutoProj.C macro also allows the selection of working mode: via `TNTuple` or via `TClonesArray` using the logical conditions in lines 41 and 47. The rapidity of center of mass for a system needs to be calculated individually and treated as a setting parameter.
 
