@@ -13,4 +13,4 @@ All important settings regarding the simulation and data analysis can be easily 
 
 `plutoProj.C` is the main macro, which contains all necessary settings and coordinates the program. It includes three dependent macros: `generateFireball.C`, `doFireball.C` and `readFireball.C`.
 
-`generateFireball.C` generates the fireball and saves it to a .root file. `readFireball.C` then loads this file and performs data analysis using the TClonesArray class. The goal of the data analysis is to present a pt:y distribution of generated particles. `doFireball.C` performs both these tasks in one function using the `TNTuple` class. However, bear in mind that the first method appears to be quicker. 
+`generateFireball.C` generates the fireball and saves it to a .root file. `readFireball.C` then loads this file and performs data analysis using the TClonesArray class. The goal of the data analysis is to present a pt:y distribution of generated particles. `doFireball.C` performs both these tasks in one function using the TNTuple class. However, bear in mind that the first method appears to be quicker. 
