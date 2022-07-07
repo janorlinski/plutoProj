@@ -1,5 +1,6 @@
 R__LOAD_LIBRARY ($PLUTOLIBDIR/libPluto.so)
 #include "generateFireball.C"
+#include "doFireball.C"
 #include "readFireball.C"
 
 void plutoProj () {
@@ -35,8 +36,20 @@ void plutoProj () {
 	thetamax = 88; 		// deg
 	Double_t ycm = 0.74;
 
-	generateFireball (numberOfEvents, partname, filename, 
-		Tbeam, T1, T2, w, radExp, a2, a4, v1, v2);
+	// Choose analysis mode
 
-	readFireball(filename, pmin, pmax, thetamin, thetamax, ycm);
+	if (true) // analysis via TNTuple
+	
+		doFireball(numberOfEvents, partname, filename, 
+			Tbeam, T1, T2, w, radExp, a2, a4, v1, v2, 
+			pmin, pmax, thetamin, thetamax, ycm);
+
+	if (false) { // analysis via TClonesArray
+
+		generateFireball (numberOfEvents, partname, filename, 
+			Tbeam, T1, T2, w, radExp, a2, a4, v1, v2);
+
+		readFireball(filename, pmin, pmax, thetamin, thetamax, ycm);
+
+	}
 }
